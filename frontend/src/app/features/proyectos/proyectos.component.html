@@ -1,0 +1,46 @@
+<section id="proyectos" class="section" aria-labelledby="proyectos-titulo">
+  <h2 id="proyectos-titulo" class="section-title">
+    <span class="number">03.</span> Algunos proyectos
+  </h2>
+
+  @if (proyectos().length > 0) {
+    <ul class="proyectos-grid" role="list">
+      @for (proyecto of proyectos(); track proyecto.id) {
+        <li class="proyecto-card">
+          <div class="card-header">
+            <span class="folder-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
+                <path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V7z"/>
+              </svg>
+            </span>
+
+            <div class="card-links">
+              @if (proyecto.demoUrl) {
+                <a [href]="proyecto.demoUrl" target="_blank" rel="noopener" aria-label="Ver demo del proyecto">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                </a>
+              }
+            </div>
+          </div>
+
+          @if (proyecto.destacado) {
+            <span class="destacado-badge" aria-label="Proyecto destacado">Destacado</span>
+          }
+
+          <h3 class="proyecto-nombre">{{ proyecto.nombre }}</h3>
+          <p class="proyecto-desc">{{ proyecto.descripcion }}</p>
+
+          <ul class="proyecto-techs" aria-label="Tecnologías del proyecto">
+            @for (tech of proyecto.tecnologias; track tech) {
+              <li>{{ tech }}</li>
+            }
+          </ul>
+        </li>
+      }
+    </ul>
+  } @else {
+    <p class="loading">Cargando proyectos...</p>
+  }
+</section>

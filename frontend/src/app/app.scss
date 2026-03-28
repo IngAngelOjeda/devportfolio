@@ -1,0 +1,15 @@
+main {
+  padding: 0 clamp(1.5rem, 8vw, 100px);
+}
+
+.footer {
+  text-align: center;
+  padding: 3rem 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+
+  span {
+    color: #ff6b6b;
+  }
+}

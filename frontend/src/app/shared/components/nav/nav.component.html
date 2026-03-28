@@ -1,0 +1,55 @@
+<nav class="navbar" [class.scrolled]="scrolled()" role="navigation" aria-label="Navegación principal">
+  <!-- Logo StackLab -->
+  <button class="logo" (click)="scrollTo('inicio')" aria-label="Ir al inicio">
+    <img src="/stackLab.png" alt="StackLab" class="logo-img" />
+  </button>
+
+  <!-- Links desktop -->
+  <ul class="nav-links" role="list">
+    @for (link of navLinks; track link.anchor) {
+      <li>
+        <button
+          (click)="scrollTo(link.anchor)"
+          [class.active]="activeSection() === link.anchor"
+          [attr.aria-current]="activeSection() === link.anchor ? 'true' : null"
+        >
+          <span class="number">{{ link.number }}.</span> {{ link.label }}
+        </button>
+      </li>
+    }
+  </ul>
+
+  <!-- Hamburguesa móvil -->
+  <button
+    class="hamburger"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-label="Menú de navegación"
+  >
+    <span [class.open]="menuOpen()"></span>
+    <span [class.open]="menuOpen()"></span>
+    <span [class.open]="menuOpen()"></span>
+  </button>
+
+  <!-- Menú móvil -->
+  @if (menuOpen()) {
+    <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú móvil">
+      <ul role="list">
+        @for (link of navLinks; track link.anchor) {
+          <li>
+            <button (click)="scrollTo(link.anchor)">
+              <span class="number">{{ link.number }}.</span><br>{{ link.label }}
+            </button>
+          </li>
+        }
+      </ul>
+    </div>
+  }
+</nav>
+
+
+<!-- Barra lateral derecha — email -->
+<aside class="sidebar-right" aria-label="Email de contacto">
+  <a [href]="'mailto:' + email()" class="email-vertical">{{ email() }}</a>
+  <div class="line"></div>
+</aside>

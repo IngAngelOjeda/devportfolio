@@ -1,0 +1,49 @@
+<section id="experiencia" class="section" aria-labelledby="exp-titulo">
+  <h2 id="exp-titulo" class="section-title">
+    <span class="number">02.</span> Nuestros servicios
+  </h2>
+
+  @if (experiencias().length > 0) {
+    <div class="exp-container" role="tablist" aria-label="Servicios">
+      <!-- Tabs -->
+      <ul class="tabs" role="list">
+        @for (exp of experiencias(); track exp.id; let i = $index) {
+          <li>
+            <button
+              class="tab-btn"
+              [class.active]="activeIndex() === i"
+              (click)="selectTab(i)"
+              [attr.aria-selected]="activeIndex() === i"
+              role="tab"
+              [attr.aria-controls]="'panel-' + i"
+              [id]="'tab-' + i"
+            >
+              {{ exp.empresa }}
+            </button>
+          </li>
+        }
+      </ul>
+
+      <!-- Panel -->
+      @if (active; as exp) {
+        <div
+          class="exp-panel"
+          [id]="'panel-' + activeIndex()"
+          role="tabpanel"
+          [attr.aria-labelledby]="'tab-' + activeIndex()"
+        >
+          <h3 class="cargo">{{ exp.cargo }}</h3>
+          <p class="descripcion">{{ exp.descripcion }}</p>
+
+          <ul class="tech-tags" aria-label="Tecnologías">
+            @for (tech of exp.tecnologias; track tech) {
+              <li>{{ tech }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  } @else {
+    <p class="loading">Cargando servicios...</p>
+  }
+</section>

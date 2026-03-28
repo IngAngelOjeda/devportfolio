@@ -1,0 +1,91 @@
+<section id="contacto" class="section contacto-section" aria-labelledby="contacto-titulo">
+  <p class="pre-titulo">04. ¿Hablamos?</p>
+  <h2 id="contacto-titulo" class="contacto-titulo">Trabajemos juntos</h2>
+  <p class="contacto-desc">
+    ¿Tenés un proyecto en mente o querés saber cómo podemos ayudarte?
+    Contanos tu idea y nos ponemos en contacto a la brevedad.
+  </p>
+
+  <form
+    class="contacto-form"
+    #contactoForm="ngForm"
+    (ngSubmit)="enviar(contactoForm)"
+    novalidate
+    aria-label="Formulario de contacto"
+  >
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input
+        id="nombre"
+        type="text"
+        name="nombre"
+        [(ngModel)]="model.nombre"
+        required
+        minlength="2"
+        #nombre="ngModel"
+        placeholder="Tu nombre"
+        [attr.aria-invalid]="nombre.invalid && nombre.touched"
+      />
+      @if (nombre.invalid && nombre.touched) {
+        <span class="error-msg" role="alert">El nombre es obligatorio</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        id="email"
+        type="email"
+        name="email"
+        [(ngModel)]="model.email"
+        required
+        email
+        #emailInput="ngModel"
+        placeholder="tu@email.com"
+        [attr.aria-invalid]="emailInput.invalid && emailInput.touched"
+      />
+      @if (emailInput.invalid && emailInput.touched) {
+        <span class="error-msg" role="alert">Ingresá un email válido</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="mensaje">Mensaje</label>
+      <textarea
+        id="mensaje"
+        name="mensaje"
+        [(ngModel)]="model.mensaje"
+        required
+        minlength="10"
+        #msg="ngModel"
+        rows="6"
+        placeholder="¡Hola! Me gustaría contactarte sobre..."
+        [attr.aria-invalid]="msg.invalid && msg.touched"
+      ></textarea>
+      @if (msg.invalid && msg.touched) {
+        <span class="error-msg" role="alert">El mensaje debe tener al menos 10 caracteres</span>
+      }
+    </div>
+
+    @if (estado() === 'success') {
+      <div class="feedback success" role="status" aria-live="polite">
+        ¡Mensaje enviado! Gracias por escribir.
+      </div>
+    }
+
+    @if (estado() === 'error') {
+      <div class="feedback error" role="alert">
+        Hubo un error al enviar el mensaje. Intentá de nuevo.
+      </div>
+    }
+
+    <button
+      type="submit"
+      class="btn-enviar"
+      [disabled]="estado() === 'loading'"
+      [attr.aria-busy]="estado() === 'loading'"
+    >
+      {{ estado() === 'loading' ? 'Enviando...' : 'Enviar mensaje' }}
+    </button>
+  </form>
+</section>

@@ -1,0 +1,37 @@
+<section id="sobre-mi" class="section" aria-labelledby="sobre-mi-titulo">
+  <h2 id="sobre-mi-titulo" class="section-title">
+    <span class="number">01.</span> Quiénes somos
+  </h2>
+
+  @if (data(); as sm) {
+    <div class="sobre-mi-grid">
+      <div class="texto">
+        @for (parrafo of sm.descripcion.split('\n\n'); track parrafo) {
+          <p>{{ parrafo }}</p>
+        }
+
+        <p class="tech-intro">Tecnologías con las que trabajamos:</p>
+
+        <ul class="tech-list" aria-label="Tecnologías">
+          @for (tech of sm.tecnologias; track tech) {
+            <li>
+              <span class="bullet" aria-hidden="true">▹</span>
+              {{ tech }}
+            </li>
+          }
+        </ul>
+      </div>
+
+      <div class="foto-wrapper" aria-hidden="true">
+        <div class="foto-container logo-container">
+          <img
+            src="/stackLab.png"
+            alt="StackLab"
+            class="foto startup-logo"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  }
+</section>

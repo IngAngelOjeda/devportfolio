@@ -7,13 +7,11 @@ import com.devportfolio.repository.ExperienciaRepository;
 import com.devportfolio.repository.ProyectoRepository;
 import com.devportfolio.repository.SobreMiRepository;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-@Profile("dev")
 public class DataInitializer implements CommandLineRunner {
 
     private final SobreMiRepository sobreMiRepository;
@@ -30,9 +28,11 @@ public class DataInitializer implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        cargarSobreMi();
-        cargarExperiencias();
-        cargarProyectos();
+        if (sobreMiRepository.count() == 0) {
+            cargarSobreMi();
+            cargarExperiencias();
+            cargarProyectos();
+        }
     }
 
     private void cargarSobreMi() {

@@ -111,6 +111,10 @@
   padding: 1rem 3rem;
   transition: background-color 0.2s ease;
 
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
   &:hover:not(:disabled) {
     background-color: rgba(100, 255, 218, 0.1);
   }

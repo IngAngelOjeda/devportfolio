@@ -1,5 +1,9 @@
 main {
   padding: 0 clamp(1.5rem, 8vw, 100px);
+
+  @media (max-width: 768px) {
+    padding: 0 1.25rem;
+  }
 }
 
 .footer {

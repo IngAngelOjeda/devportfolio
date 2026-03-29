@@ -79,4 +79,8 @@
   width: 240px;
   height: auto;
   object-fit: contain;
+
+  @media (max-width: 768px) {
+    width: min(180px, 50vw);
+  }
 }

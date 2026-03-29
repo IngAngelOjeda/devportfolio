@@ -12,7 +12,8 @@ public class CorsConfig implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedOrigins(
                         "http://localhost:4200",
-                        "https://tudominio.com"
+                        "https://stacklab.online",
+                        "https://www.stacklab.online"
                 )
                 .allowedMethods("GET", "POST")
                 .allowedHeaders("*");

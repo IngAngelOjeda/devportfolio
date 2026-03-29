@@ -8,4 +8,4 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 COPY --from=build /app/target/devportfolio-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8088
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-XX:TieredStopAtLevel=1", "-Xss256k", "-jar", "app.jar"]

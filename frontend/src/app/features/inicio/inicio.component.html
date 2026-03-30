@@ -1,20 +1,18 @@
 <section id="inicio" class="hero" aria-label="Presentación">
   @if (loaded()) {
-    <p class="greeting fade-in-up" style="animation-delay: 0.1s">Bienvenido a</p>
-
-    <h1 class="name fade-in-up" style="animation-delay: 0.2s">
+    <h1 class="name fade-in-up" style="animation-delay: 0.1s">
       {{ nombre() }}<span class="accent">.</span>
     </h1>
 
-    <h2 class="subtitle fade-in-up" style="animation-delay: 0.3s">
+    <h2 class="subtitle fade-in-up" style="animation-delay: 0.2s">
       {{ titulo() }}
     </h2>
 
-    <p class="description fade-in-up" style="animation-delay: 0.4s">
+    <p class="description fade-in-up" style="animation-delay: 0.3s">
       {{ descripcion() }}
     </p>
 
-    <div class="cta fade-in-up" style="animation-delay: 0.5s">
+    <div class="cta fade-in-up" style="animation-delay: 0.4s">
       <button class="btn-outline" (click)="scrollTo('proyectos')" aria-label="Ver proyectos">
         Ver proyectos
       </button>

@@ -128,8 +128,7 @@ public class DataInitializer implements CommandLineRunner {
         p2.setNombre("Plataforma SaaS de Gestión");
         p2.setDescripcion(
                 "Plataforma multi-tenant para gestión empresarial con módulos de facturación, " +
-                "inventario, reportes en tiempo real y panel de administración. " +
-                "Más de 50 empresas activas en producción."
+                "inventario, reportes en tiempo real y panel de administración. "
         );
         p2.setTecnologias(List.of("Spring Boot", "Angular", "PostgreSQL", "Docker"));
         p2.setGithubUrl(null);

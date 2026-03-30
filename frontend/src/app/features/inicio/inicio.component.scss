@@ -8,23 +8,12 @@
   margin: 0 auto;
 
   @media (max-width: 768px) {
-    padding: 0;
+    padding: 0 1.5rem;
     min-height: 100svh;
   }
 
   > * {
     opacity: 0;
-  }
-}
-
-.greeting {
-  font-family: var(--font-mono);
-  font-size: clamp(0.9rem, 2vw, 1rem);
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-
-  @media (max-width: 768px) {
-    display: none;
   }
 }
 
@@ -60,6 +49,15 @@
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+
+    button {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }
 
 .btn-outline {

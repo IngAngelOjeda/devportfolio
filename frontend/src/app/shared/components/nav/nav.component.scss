@@ -112,12 +112,20 @@
   }
 }
 
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 199;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .mobile-menu {
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   width: min(75vw, 320px);
+  z-index: 200;
   background-color: var(--bg-secondary);
   display: flex;
   align-items: center;

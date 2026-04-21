@@ -19,34 +19,8 @@
     }
   </ul>
 
-  <!-- Hamburguesa móvil -->
-  <button
-    class="hamburger"
-    (click)="toggleMenu()"
-    [attr.aria-expanded]="menuOpen()"
-    aria-label="Menú de navegación"
-  >
-    <span [class.open]="menuOpen()"></span>
-    <span [class.open]="menuOpen()"></span>
-    <span [class.open]="menuOpen()"></span>
-  </button>
 
 </nav>
-
-@if (menuOpen()) {
-  <div class="menu-overlay" (click)="closeMenu()" aria-hidden="true"></div>
-  <div class="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú móvil">
-    <ul role="list">
-      @for (link of navLinks; track link.anchor) {
-        <li>
-          <button (click)="scrollTo(link.anchor)">
-            <span class="number">{{ link.number }}.</span><br>{{ link.label }}
-          </button>
-        </li>
-      }
-    </ul>
-  </div>
-}
 
 
 <!-- Barra lateral derecha — email -->

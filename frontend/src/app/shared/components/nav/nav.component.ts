@@ -15,7 +15,6 @@ export class NavComponent implements OnInit {
   private readonly portfolioService = inject(PortfolioService);
 
   scrolled = signal(false);
-  menuOpen = signal(false);
   activeSection = signal('inicio');
   email = signal('stacklabcontacto@gmail.com');
 
@@ -38,17 +37,8 @@ export class NavComponent implements OnInit {
     this.scrolled.set(window.scrollY > 50);
   }
 
-  toggleMenu(): void {
-    this.menuOpen.update(v => !v);
-  }
-
-  closeMenu(): void {
-    this.menuOpen.set(false);
-  }
-
   scrollTo(anchor: string): void {
     document.getElementById(anchor)?.scrollIntoView({ behavior: 'smooth' });
-    this.closeMenu();
   }
 
   private setupScrollSpy(): void {

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>StackLab — Desarrollo web y software a medida en Paraguay</title>
+  <meta name="description" content="Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay. Equipo técnico enfocado, entregas rápidas y presupuestos claros desde el primer contacto. Sin intermediarios." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.stacklab.online/" />
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.stacklab.online/" />
+  <meta property="og:title" content="StackLab — Desarrollo web y software a medida en Paraguay" />
+  <meta property="og:description" content="Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay. Entregas rápidas, presupuestos claros y sin intermediarios." />
+  <meta property="og:image" content="https://www.stacklab.online/assets/stackLab.png" />
+  <meta property="og:locale" content="es_PY" />
+  <meta property="og:site_name" content="StackLab" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "StackLab",
+    "url": "https://www.stacklab.online",
+    "logo": "https://www.stacklab.online/assets/stackLab.png",
+    "description": "Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PY"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "consultadesarrolloweb@gmail.com",
+      "contactType": "sales",
+      "availableLanguage": "Spanish"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de desarrollo de software",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Landing page",
+            "description": "Una página que convierte visitas en clientes. Diseño limpio, responsive y rápida de cargar."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Sitio corporativo",
+            "description": "Presencia web completa con CMS, SEO y diseño adaptado a tu marca."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Chatbot de soporte",
+            "description": "Asistente inteligente para tu sitio que responde preguntas y atiende clientes de forma automática."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Panel de administración",
+            "description": "Dashboard a medida con tablas, filtros, reportes y permisos por rol."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "API REST",
+            "description": "Backend robusto con .NET o Spring Boot, autenticación JWT y documentación Swagger."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg: #f8fafc;
+      --bg2: #f1f5f9;
+      --bg3: #e8eef4;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --border2: #cbd5e1;
+      --accent: #0284c7;
+      --accent2: #0369a1;
+      --accent-dim: rgba(2, 132, 199, 0.08);
+      --accent-glow: rgba(2, 132, 199, 0.12);
+      --text: #0f172a;
+      --text2: #475569;
+      --text3: #94a3b8;
+      --font-display: "Syne", sans-serif;
+      --font-body: "DM Sans", sans-serif;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      background: rgba(248, 250, 252, 0.85);
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .nav-logo img,
+    .footer-logo img {
+      display: block;
+      height: 34px;
+      width: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text2);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 13px;
+      padding: 7px 18px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover {
+      opacity: 0.85;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.25;
+      mask-image: radial-gradient(
+        ellipse 80% 60% at 50% 40%,
+        black 30%,
+        transparent 100%
+      );
+    }
+    .hero-glow {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 300px;
+      background: radial-gradient(
+        ellipse,
+        rgba(2, 132, 199, 0.07) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+    }
+    @keyframes pulse {
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+      }
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    h1 .accent-line {
+      color: var(--accent);
+    }
+    h1 .dim-line {
+      color: var(--text3);
+    }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text2);
+      max-width: 520px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      font-family: var(--font-body);
+      font-weight: 500;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 7px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text2);
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 7px;
+      border: 1px solid var(--border2);
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--text3);
+      color: var(--text);
+    }
+    .hero-stat-row {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .hero-stat .num {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .hero-stat .label {
+      font-size: 12px;
+      color: var(--text3);
+      margin-top: 3px;
+      letter-spacing: 0.03em;
+    }
+
+    .section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--text2);
+      max-width: 500px;
+      font-size: 0.95rem;
+      font-weight: 300;
+      margin-bottom: 3rem;
+      line-height: 1.7;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--bg2);
+      padding: 1.5rem;
+      transition: background 0.2s;
+      cursor: default;
+      position: relative;
+    }
+    .service-icon {
+      display: none;
+    }
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .service-desc {
+      font-size: 12.5px;
+      color: var(--text2);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .service-price {
+      font-size: 12px;
+      color: var(--accent);
+      margin-top: 0.75rem;
+      font-weight: 500;
+    }
+
+    .how-section {
+      padding: 6rem 2rem;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .how-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0;
+      margin-top: 3rem;
+    }
+    .step {
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+    }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border2);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+    .step-name {
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    .step-desc {
+      font-size: 12.5px;
+      color: var(--text2);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .why-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    .why-card.featured {
+      border-color: rgba(2, 132, 199, 0.3);
+      background: linear-gradient(
+        135deg,
+        var(--surface),
+        rgba(2, 132, 199, 0.04)
+      );
+    }
+    .why-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+    .why-desc {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .cta-section {
+      padding: 7rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 250px;
+      background: radial-gradient(
+        ellipse,
+        rgba(2, 132, 199, 0.06) 0%,
+        transparent 70%
+      );
+      pointer-events: none;
+    }
+    .cta-section h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .cta-section p {
+      color: var(--text2);
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .footer-logo img {
+      display: block;
+      height: 28px;
+      width: auto;
+    }
+    footer p {
+      font-size: 12px;
+      color: var(--text3);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 640px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+      nav .nav-links {
+        display: none;
+      }
+      h1 {
+        font-size: 2.2rem;
+      }
+      .hero-stat-row {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <a href="#" aria-label="Inicio" style="background-color: #f1f5f9;padding: 3px;border-radius: 6px;">
+      <img src="assets/stackLab.png" alt="StackLab" width="279" height="154" />
+    </a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proceso">Proceso</a></li>
+    <li><a href="#nosotros">Nosotros</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Hablemos</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-inner fade-up">
+      <h1>
+      Construimos software<br />
+      <span class="accent-line">que funciona de verdad.</span><br />
+      <span class="dim-line">Rápido. Sin vueltas.</span>
+    </h1>
+    <p class="hero-sub">
+      Sitios web, apps móviles, sistemas a medida y chatbots — entregados en
+      tiempo récord para negocios que quieren crecer.
+    </p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">
+        Cotizar proyecto
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
+      </a>
+      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+    </div>
+    <div class="hero-stat-row">
+      <div class="hero-stat">
+        <div class="num">Proyectos</div>
+        <div class="label">que se adaptan a tu necesidad</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">Directo</div>
+        <div class="label">sin intermediarios ni sorpresas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="border-top: 1px solid var(--border)">
+  <section class="section" id="servicios">
+    <p class="section-label fade-up">Lo que hacemos</p>
+    <h2 class="section-title fade-up">
+      Servicios que se adaptan<br />a tu etapa de negocio.
+    </h2>
+    <p class="section-sub fade-up">
+      Desde una landing page hasta sistemas completos. Empezamos por donde
+      tengas más necesidad.
+    </p>
+    <div class="services-grid fade-up">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ti ti-browser" aria-hidden="true"></i>
+        </div>
+        <div class="service-name">Landing page</div>
+        <div class="service-desc">
+          Una página que convierte visitas en clientes. Diseño limpio,
+          responsive y rápida de cargar.
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ti ti-building" aria-hidden="true"></i>
+        </div>
+        <div class="service-name">Sitio corporativo</div>
+        <div class="service-desc">
+          Presencia web completa con CMS, SEO y diseño adaptado a tu marca.
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ti ti-message-chatbot" aria-hidden="true"></i>
+        </div>
+        <div class="service-name">Chatbot de soporte</div>
+        <div class="service-desc">
+          Asistente inteligente para tu sitio que responde preguntas y atiende
+          clientes de forma automática.
+        </div>
+      </div>
+      <!-- Habilitar cuando tengamos una mac xd -->
+      <!-- <div class="service-card">
+        <div class="service-icon">
+          <i class="ti ti-device-mobile" aria-hidden="true"></i>
+        </div>
+        <div class="service-name">App multiplataforma</div>
+        <div class="service-desc">
+          Aplicación móvil para iOS y Android desde un solo código. Lista para
+          publicar en stores.
+        </div>
+      </div> -->
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ti ti-layout-dashboard" aria-hidden="true"></i>
+        </div>
+        <div class="service-name">Panel de administración</div>
+        <div class="service-desc">
+          Dashboard a medida con tablas, filtros, reportes y permisos por rol.
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ti ti-api" aria-hidden="true"></i>
+        </div>
+        <div class="service-name">API REST</div>
+        <div class="service-desc">
+          Backend robusto con .NET o Spring Boot, autenticación JWT y
+          documentación Swagger.
+        </div>
+      </div>
+      <div class="service-card" aria-hidden="true"></div>
+    </div>
+  </section>
+</div>
+
+<section class="how-section" id="proceso">
+  <div class="how-inner">
+    <p class="section-label fade-up">Cómo trabajamos</p>
+    <h2 class="section-title fade-up">Simple, directo, sin vueltas.</h2>
+    <p class="section-sub fade-up">
+      Proceso claro desde el primer mensaje hasta la entrega final.
+    </p>
+    <div class="steps">
+      <div class="step fade-up">
+        <div class="step-num">01</div>
+        <div class="step-name">Hablamos</div>
+        <div class="step-desc">
+          Nos contás qué necesitás. Te entregamos una propuesta clara y sin
+          sorpresas.
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">02</div>
+        <div class="step-name">Diseñamos</div>
+        <div class="step-desc">
+          Definimos el alcance juntos. Sin sorpresas después.
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">03</div>
+        <div class="step-name">Construimos</div>
+        <div class="step-desc">
+          Desarrollo ágil con actualizaciones frecuentes para que veas el avance
+          en todo momento.
+        </div>
+      </div>
+      <div class="step fade-up">
+        <div class="step-num">04</div>
+        <div class="step-name">Entregamos</div>
+        <div class="step-desc">
+          Deploy, pruebas y soporte post-entrega incluido. No desaparecemos.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="nosotros">
+  <p class="section-label fade-up">Por qué StackLab</p>
+  <h2 class="section-title fade-up">No somos otra agencia.</h2>
+  <p class="section-sub fade-up">
+    Somos un equipo técnico pequeño y enfocado — eso se nota en cada entrega.
+  </p>
+  <div class="why-grid fade-up">
+    <div class="why-card featured">
+      <div class="why-title">Velocidad de entrega real</div>
+      <div class="why-desc">
+        Nuestro proceso de trabajo está optimizado para entregar rápido sin
+        sacrificar calidad. Nos enfocamos en resultados claros y avance constante.
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-title">Stack completo, un solo equipo</div>
+      <!-- incluir Web, mobile, backend, chatbots. en el futuro -->
+      <div class="why-desc">
+        No tercerizamos nada ni tenés que
+        coordinar varios proveedores. Todo bajo un mismo techo.
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-title">Presupuestos claros</div>
+      <div class="why-desc">
+        Conocemos el mercado local. Ofrecemos presupuestos justos y transparentes
+        desde el primer contacto, sin letra chica ni costos ocultos.
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-title">Soporte después de la entrega</div>
+      <div class="why-desc">
+        Ofrecemos mantenimiento mensual para que tu producto siga funcionando.
+        No desaparecemos cuando cobran.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="cta-section"
+  id="contacto"
+  style="border-top: 1px solid var(--border)"
+>
+  <div class="cta-glow"></div>
+  <div class="fade-up">
+    <h2>¿Tenés un proyecto en mente?</h2>
+    <p>Contanos qué necesitás y te respondemos con una propuesta clara.</p>
+    <a
+      href="mailto:consultadesarrolloweb@gmail.com"
+      class="btn-primary"
+      style="display: inline-flex"
+    >
+      Contactanos ahora
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M5 12h14M12 5l7 7-7 7" />
+      </svg>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <img src="assets/stackLab.png" alt="StackLab" width="279" height="154" />
+  </div>
+  <p>© 2026 StackLab · Paraguay</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) e.target.classList.add("visible");
+      });
+    },
+    { threshold: 0.1 },
+  );
+  document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
+</script>
+
+</body>
+</html>

@@ -553,6 +553,84 @@
       transform: translateY(0);
     }
 
+    .carousel-section {
+      padding: 6rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .carousel-section .section-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .carousel {
+      position: relative;
+      margin-top: 2.5rem;
+    }
+    .carousel-track-wrapper {
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .carousel-slide {
+      min-width: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--border2);
+      background: var(--surface);
+      color: var(--text2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      z-index: 10;
+    }
+    .carousel-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .carousel-prev { left: -20px; }
+    .carousel-next { right: -20px; }
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 1.25rem;
+    }
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--border2);
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.2s;
+    }
+    .carousel-dot.active {
+      background: var(--accent);
+      width: 20px;
+      border-radius: 3px;
+    }
+    @media (max-width: 640px) {
+      .carousel-prev { left: -12px; }
+      .carousel-next { right: -12px; }
+    }
+
     @media (max-width: 640px) {
       .why-grid {
         grid-template-columns: 1fr;
@@ -579,6 +657,7 @@
   </div>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#trabajos">Proyectos</a></li>
     <li><a href="#proceso">Proceso</a></li>
     <li><a href="#nosotros">Nosotros</a></li>
   </ul>
@@ -705,6 +784,40 @@
   </section>
 </div>
 
+<section class="carousel-section" id="trabajos">
+  <div class="section-inner">
+    <p class="section-label fade-up">Lo que podemos construir</p>
+    <h2 class="section-title fade-up">Desde una landing page hasta un sistema a medida — esto es solo una muestra de nuestras posibilidades.</h2>
+    <div class="carousel fade-up">
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-slide"><img src="assets/screenshot-4.webp" alt="Proyecto 4" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-panel-3.webp" alt="Proyecto 11" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-panel-1.webp" alt="Proyecto 9" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-1.webp" alt="Proyecto 1" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-2.webp" alt="Proyecto 2" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-3.webp" alt="Proyecto 3" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-5.webp" alt="Proyecto 5" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-6.webp" alt="Proyecto 6" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-7.webp" alt="Proyecto 7" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-8.webp" alt="Proyecto 8" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-panel-2.webp" alt="Proyecto 10" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-panel-4.webp" alt="Proyecto 12" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-panel-5.webp" alt="Proyecto 13" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="assets/screenshot-panel-6.webp" alt="Proyecto 14" loading="lazy" /></div>
+        </div>
+      </div>
+      <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </div>
+</section>
+
 <section class="how-section" id="proceso">
   <div class="how-inner">
     <p class="section-label fade-up">Cómo trabajamos</p>
@@ -826,6 +939,44 @@
 </footer>
 
 <script>
+  // Carousel
+  (function () {
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    let current = 0;
+    let timer;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    });
+
+    function goTo(index) {
+      slides[current] && null;
+      current = (index + total) % total;
+      track.style.transform = 'translateX(-' + current * 100 + '%)';
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+    }
+
+    function startTimer() {
+      timer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    document.getElementById('carouselPrev').addEventListener('click', () => { clearInterval(timer); goTo(current - 1); startTimer(); });
+    document.getElementById('carouselNext').addEventListener('click', () => { clearInterval(timer); goTo(current + 1); startTimer(); });
+    track.closest('.carousel').addEventListener('mouseenter', () => clearInterval(timer));
+    track.closest('.carousel').addEventListener('mouseleave', startTimer);
+
+    startTimer();
+  })();
+
   const obs = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {

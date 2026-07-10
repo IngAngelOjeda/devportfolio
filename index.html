@@ -1,12 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <script>
+    (function () {
+      var t = localStorage.getItem("theme");
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
 
   <title>StackLab — Desarrollo web y software a medida en Paraguay</title>
-  <meta name="description" content="Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay. Equipo técnico enfocado, entregas rápidas y presupuestos claros desde el primer contacto. Sin intermediarios." />
-  <meta name="robots" content="index, follow" />
+  <meta name="description"
+    content="Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay. Equipo técnico enfocado, entregas rápidas y presupuestos claros desde el primer contacto. Sin intermediarios." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://www.stacklab.online/" />
   <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
 
@@ -14,8 +23,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.stacklab.online/" />
   <meta property="og:title" content="StackLab — Desarrollo web y software a medida en Paraguay" />
-  <meta property="og:description" content="Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay. Entregas rápidas, presupuestos claros y sin intermediarios." />
-  <meta property="og:image" content="https://www.stacklab.online/assets/stackLab.png" />
+  <meta property="og:description"
+    content="Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay. Entregas rápidas, presupuestos claros y sin intermediarios." />
+  <meta property="og:image" content="https://www.stacklab.online/assets/stacklab-seo-og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="StackLab — Desarrollo web y software a medida en Paraguay" />
   <meta property="og:locale" content="es_PY" />
   <meta property="og:site_name" content="StackLab" />
 
@@ -24,76 +38,82 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
-    rel="stylesheet"
-  />
+    rel="stylesheet" />
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "StackLab",
-    "url": "https://www.stacklab.online",
-    "logo": "https://www.stacklab.online/assets/stackLab.png",
-    "description": "Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "PY"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "consultadesarrolloweb@gmail.com",
-      "contactType": "sales",
-      "availableLanguage": "Spanish"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios de desarrollo de software",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Landing page",
-            "description": "Una página que convierte visitas en clientes. Diseño limpio, responsive y rápida de cargar."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Sitio corporativo",
-            "description": "Presencia web completa con CMS, SEO y diseño adaptado a tu marca."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Chatbot de soporte",
-            "description": "Asistente inteligente para tu sitio que responde preguntas y atiende clientes de forma automática."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Panel de administración",
-            "description": "Dashboard a medida con tablas, filtros, reportes y permisos por rol."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "API REST",
-            "description": "Backend robusto con .NET o Spring Boot, autenticación JWT y documentación Swagger."
-          }
-        }
-      ]
-    }
-  }
-  </script>
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "StackLab",
+                "url": "https://www.stacklab.online",
+                "logo": "https://www.stacklab.online/assets/stackLab.png",
+                "image": "https://www.stacklab.online/assets/stackLab.png",
+                "description": "Desarrollamos sitios web, sistemas a medida, chatbots y APIs REST para empresas en Paraguay.",
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Paraguay"
+                },
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressCountry": "PY"
+                },
+                "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+595987449587",
+                    "email": "consultadesarrolloweb@gmail.com",
+                    "contactType": "sales",
+                    "areaServed": "PY",
+                    "availableLanguage": "Spanish"
+                },
+                "hasOfferCatalog": {
+                    "@type": "OfferCatalog",
+                    "name": "Servicios de desarrollo de software",
+                    "itemListElement": [
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Landing page",
+                                "description": "Una página que convierte visitas en clientes. Diseño limpio, responsive y rápida de cargar."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Sitio corporativo",
+                                "description": "Presencia web completa con CMS, SEO y diseño adaptado a tu marca."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Chatbot de soporte",
+                                "description": "Asistente inteligente para tu sitio que responde preguntas y atiende clientes de forma automática."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "Panel de administración",
+                                "description": "Dashboard a medida con tablas, filtros, reportes y permisos por rol."
+                            }
+                        },
+                        {
+                            "@type": "Offer",
+                            "itemOffered": {
+                                "@type": "Service",
+                                "name": "API REST",
+                                "description": "Backend robusto con .NET o Spring Boot, autenticación JWT y documentación Swagger."
+                            }
+                        }
+                    ]
+                }
+            }
+        </script>
 
   <style>
     * {
@@ -101,6 +121,7 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     :root {
       --bg: #f8fafc;
       --bg2: #f1f5f9;
@@ -110,17 +131,69 @@
       --border2: #cbd5e1;
       --accent: #0284c7;
       --accent2: #0369a1;
+      --accent-solid: #0284c7;
+      --accent-border: rgba(2, 132, 199, 0.3);
       --accent-dim: rgba(2, 132, 199, 0.08);
       --accent-glow: rgba(2, 132, 199, 0.12);
       --text: #0f172a;
       --text2: #475569;
       --text3: #94a3b8;
+      --nav-bg: rgba(248, 250, 252, 0.85);
+      --glow-1: rgba(2, 132, 199, 0.07);
+      --glow-2: rgba(2, 132, 199, 0.06);
+      --featured-tint: rgba(2, 132, 199, 0.04);
       --font-display: "Syne", sans-serif;
       --font-body: "DM Sans", sans-serif;
     }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0a0e14;
+        --bg2: #10151d;
+        --bg3: #161d27;
+        --surface: #12181f;
+        --border: #232b36;
+        --border2: #333e4d;
+        --accent: #38bdf8;
+        --accent2: #0ea5e9;
+        --accent-border: rgba(56, 189, 248, 0.35);
+        --accent-dim: rgba(56, 189, 248, 0.1);
+        --accent-glow: rgba(56, 189, 248, 0.16);
+        --text: #f1f5f9;
+        --text2: #94a3b8;
+        --text3: #64748b;
+        --nav-bg: rgba(10, 14, 20, 0.8);
+        --glow-1: rgba(56, 189, 248, 0.1);
+        --glow-2: rgba(56, 189, 248, 0.08);
+        --featured-tint: rgba(56, 189, 248, 0.06);
+      }
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0a0e14;
+      --bg2: #10151d;
+      --bg3: #161d27;
+      --surface: #12181f;
+      --border: #232b36;
+      --border2: #333e4d;
+      --accent: #38bdf8;
+      --accent2: #0ea5e9;
+      --accent-border: rgba(56, 189, 248, 0.35);
+      --accent-dim: rgba(56, 189, 248, 0.1);
+      --accent-glow: rgba(56, 189, 248, 0.16);
+      --text: #f1f5f9;
+      --text2: #94a3b8;
+      --text3: #64748b;
+      --nav-bg: rgba(10, 14, 20, 0.8);
+      --glow-1: rgba(56, 189, 248, 0.1);
+      --glow-2: rgba(56, 189, 248, 0.08);
+      --featured-tint: rgba(56, 189, 248, 0.06);
+    }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
       background: var(--bg);
       color: var(--text);
@@ -128,6 +201,7 @@
       font-size: 15px;
       line-height: 1.6;
       overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
     }
 
     nav {
@@ -140,27 +214,46 @@
       height: 60px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       border-bottom: 1px solid var(--border);
-      background: rgba(248, 250, 252, 0.85);
+      background: var(--nav-bg);
       backdrop-filter: blur(12px);
+      transition: background-color 0.25s ease, border-color 0.25s ease;
     }
+
+    .nav-inner {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
     .nav-logo {
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
     }
+
     .nav-logo img,
     .footer-logo img {
       display: block;
       height: 34px;
       width: auto;
     }
+
     .nav-links {
       display: flex;
       gap: 2rem;
       list-style: none;
     }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
     .nav-links a {
       color: var(--text2);
       text-decoration: none;
@@ -169,11 +262,13 @@
       letter-spacing: 0.02em;
       transition: color 0.2s;
     }
+
     .nav-links a:hover {
       color: var(--text);
     }
+
     .nav-cta {
-      background: var(--accent);
+      background: var(--accent-solid);
       color: #fff;
       font-family: var(--font-body);
       font-weight: 500;
@@ -184,7 +279,11 @@
       cursor: pointer;
       text-decoration: none;
       transition: opacity 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
+
     .nav-cta:hover {
       opacity: 0.85;
     }
@@ -197,7 +296,9 @@
       padding: 8rem 2rem 4rem;
       position: relative;
       overflow: hidden;
+      align-items: center;
     }
+
     .hero-grid {
       position: absolute;
       inset: 0;
@@ -206,12 +307,11 @@
         linear-gradient(90deg, var(--border) 1px, transparent 1px);
       background-size: 60px 60px;
       opacity: 0.25;
-      mask-image: radial-gradient(
-        ellipse 80% 60% at 50% 40%,
-        black 30%,
-        transparent 100%
-      );
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%,
+          black 30%,
+          transparent 100%);
     }
+
     .hero-glow {
       position: absolute;
       top: 20%;
@@ -219,45 +319,51 @@
       transform: translateX(-50%);
       width: 600px;
       height: 300px;
-      background: radial-gradient(
-        ellipse,
-        rgba(2, 132, 199, 0.07) 0%,
-        transparent 70%
-      );
+      background: radial-gradient(ellipse,
+          var(--glow-1) 0%,
+          transparent 70%);
       pointer-events: none;
     }
+
     .hero-inner {
       max-width: 860px;
       margin: 0 auto;
       width: 100%;
       position: relative;
     }
+
     @keyframes pulse {
+
       0%,
       100% {
         opacity: 1;
         transform: scale(1);
       }
+
       50% {
         opacity: 0.5;
         transform: scale(0.8);
       }
     }
+
     h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-size: clamp(2rem, 3.5vw, 3rem);
       font-weight: 800;
-      line-height: 1.05;
+      line-height: 1.1;
       letter-spacing: -0.03em;
       color: var(--text);
       margin-bottom: 1.5rem;
     }
+
     h1 .accent-line {
       color: var(--accent);
     }
+
     h1 .dim-line {
       color: var(--text3);
     }
+
     .hero-sub {
       font-size: 1.05rem;
       color: var(--text2);
@@ -266,14 +372,16 @@
       margin-bottom: 2.5rem;
       font-weight: 300;
     }
+
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       align-items: center;
     }
+
     .btn-primary {
-      background: var(--accent);
+      background: var(--accent-solid);
       color: #fff;
       font-family: var(--font-body);
       font-weight: 500;
@@ -288,10 +396,12 @@
       align-items: center;
       gap: 8px;
     }
+
     .btn-primary:hover {
       opacity: 0.88;
       transform: translateY(-1px);
     }
+
     .btn-ghost {
       background: transparent;
       color: var(--text2);
@@ -305,10 +415,12 @@
       text-decoration: none;
       transition: all 0.2s;
     }
+
     .btn-ghost:hover {
       border-color: var(--text3);
       color: var(--text);
     }
+
     .hero-stat-row {
       display: flex;
       gap: 2.5rem;
@@ -317,6 +429,7 @@
       border-top: 1px solid var(--border);
       flex-wrap: wrap;
     }
+
     .hero-stat .num {
       font-family: var(--font-display);
       font-size: 1.6rem;
@@ -324,6 +437,7 @@
       color: var(--text);
       line-height: 1;
     }
+
     .hero-stat .label {
       font-size: 12px;
       color: var(--text3);
@@ -336,6 +450,7 @@
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .section-label {
       font-size: 11px;
       font-weight: 500;
@@ -344,6 +459,7 @@
       text-transform: uppercase;
       margin-bottom: 0.75rem;
     }
+
     .section-title {
       font-family: var(--font-display);
       font-size: clamp(1.6rem, 3vw, 2.2rem);
@@ -352,6 +468,7 @@
       line-height: 1.15;
       margin-bottom: 1rem;
     }
+
     .section-sub {
       color: var(--text2);
       max-width: 500px;
@@ -360,15 +477,17 @@
       margin-bottom: 3rem;
       line-height: 1.7;
     }
+
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1px;
       background: var(--border);
       border: 1px solid var(--border);
       border-radius: 12px;
       overflow: hidden;
     }
+
     .service-card {
       background: var(--bg2);
       padding: 1.5rem;
@@ -376,9 +495,11 @@
       cursor: default;
       position: relative;
     }
+
     .service-icon {
       display: none;
     }
+
     .service-name {
       font-family: var(--font-display);
       font-size: 0.95rem;
@@ -386,12 +507,14 @@
       margin-bottom: 0.4rem;
       letter-spacing: -0.01em;
     }
+
     .service-desc {
       font-size: 12.5px;
       color: var(--text2);
       line-height: 1.6;
       font-weight: 300;
     }
+
     .service-price {
       font-size: 12px;
       color: var(--accent);
@@ -405,20 +528,24 @@
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
+
     .how-inner {
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 0;
       margin-top: 3rem;
     }
+
     .step {
       padding: 1.5rem 1.25rem;
       text-align: center;
     }
+
     .step-num {
       width: 44px;
       height: 44px;
@@ -435,12 +562,14 @@
       color: var(--accent);
       letter-spacing: 0.05em;
     }
+
     .step-name {
       font-family: var(--font-display);
       font-size: 0.9rem;
       font-weight: 600;
       margin-bottom: 0.4rem;
     }
+
     .step-desc {
       font-size: 12.5px;
       color: var(--text2);
@@ -454,20 +583,21 @@
       gap: 1.5rem;
       margin-top: 3rem;
     }
+
     .why-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 10px;
       padding: 1.5rem;
     }
+
     .why-card.featured {
-      border-color: rgba(2, 132, 199, 0.3);
-      background: linear-gradient(
-        135deg,
-        var(--surface),
-        rgba(2, 132, 199, 0.04)
-      );
+      border-color: var(--accent-border);
+      background: linear-gradient(135deg,
+          var(--surface),
+          var(--featured-tint));
     }
+
     .why-title {
       font-family: var(--font-display);
       font-size: 1rem;
@@ -475,6 +605,7 @@
       margin-bottom: 0.4rem;
       letter-spacing: -0.01em;
     }
+
     .why-desc {
       font-size: 13px;
       color: var(--text2);
@@ -488,6 +619,13 @@
       position: relative;
       overflow: hidden;
     }
+
+    .cta-section>.fade-up {
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+
     .cta-glow {
       position: absolute;
       top: 50%;
@@ -495,13 +633,12 @@
       transform: translate(-50%, -50%);
       width: 500px;
       height: 250px;
-      background: radial-gradient(
-        ellipse,
-        rgba(2, 132, 199, 0.06) 0%,
-        transparent 70%
-      );
+      background: radial-gradient(ellipse,
+          var(--glow-2) 0%,
+          transparent 70%);
       pointer-events: none;
     }
+
     .cta-section h2 {
       font-family: var(--font-display);
       font-size: clamp(1.8rem, 4vw, 2.8rem);
@@ -510,6 +647,7 @@
       line-height: 1.1;
       margin-bottom: 1rem;
     }
+
     .cta-section p {
       color: var(--text2);
       font-size: 1rem;
@@ -517,25 +655,98 @@
       font-weight: 300;
     }
 
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      text-align: left;
+      margin-top: 2rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border2);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: var(--text3);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-status {
+      font-size: 13px;
+      padding: 10px 14px;
+      border-radius: 7px;
+      display: none;
+    }
+
+    .form-status.success {
+      display: block;
+      background: rgba(34, 197, 94, 0.1);
+      color: #16a34a;
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .form-status.error {
+      display: block;
+      background: rgba(239, 68, 68, 0.1);
+      color: #dc2626;
+      border: 1px solid rgba(239, 68, 68, 0.2);
+    }
+
+    @media (max-width: 640px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
     footer {
       border-top: 1px solid var(--border);
       padding: 2rem;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       gap: 0.5rem;
     }
+
     .footer-logo {
       display: inline-flex;
       align-items: center;
       gap: 0.75rem;
     }
+
     .footer-logo img {
       display: block;
       height: 28px;
       width: auto;
     }
+
     footer p {
       font-size: 12px;
       color: var(--text3);
@@ -548,6 +759,7 @@
         opacity 0.6s ease,
         transform 0.6s ease;
     }
+
     .fade-up.visible {
       opacity: 1;
       transform: translateY(0);
@@ -557,31 +769,38 @@
       padding: 6rem 2rem;
       border-top: 1px solid var(--border);
     }
+
     .carousel-section .section-inner {
       max-width: 1000px;
       margin: 0 auto;
     }
+
     .carousel {
       position: relative;
       margin-top: 2.5rem;
     }
+
     .carousel-track-wrapper {
       overflow: hidden;
       border-radius: 12px;
       border: 1px solid var(--border);
     }
+
     .carousel-track {
       display: flex;
       transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .carousel-slide {
       min-width: 100%;
     }
+
     .carousel-slide img {
       width: 100%;
       height: auto;
       display: block;
     }
+
     .carousel-btn {
       position: absolute;
       top: 50%;
@@ -599,18 +818,27 @@
       transition: all 0.2s;
       z-index: 10;
     }
+
     .carousel-btn:hover {
       border-color: var(--accent);
       color: var(--accent);
     }
-    .carousel-prev { left: -20px; }
-    .carousel-next { right: -20px; }
+
+    .carousel-prev {
+      left: -20px;
+    }
+
+    .carousel-next {
+      right: -20px;
+    }
+
     .carousel-dots {
       display: flex;
       justify-content: center;
       gap: 6px;
       margin-top: 1.25rem;
     }
+
     .carousel-dot {
       width: 6px;
       height: 6px;
@@ -621,372 +849,604 @@
       padding: 0;
       transition: all 0.2s;
     }
+
     .carousel-dot.active {
       background: var(--accent);
       width: 20px;
       border-radius: 3px;
     }
+
     @media (max-width: 640px) {
-      .carousel-prev { left: -12px; }
-      .carousel-next { right: -12px; }
+      .carousel-prev {
+        left: -12px;
+      }
+
+      .carousel-next {
+        right: -12px;
+      }
     }
 
     @media (max-width: 640px) {
       .why-grid {
         grid-template-columns: 1fr;
       }
+
       nav .nav-links {
         display: none;
       }
+
       h1 {
         font-size: 2.2rem;
       }
+
       .hero-stat-row {
         gap: 1.5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .service-card,
+    .why-card,
+    .step-num,
+    .contact-form input,
+    .contact-form textarea,
+    .carousel-btn,
+    .carousel-track-wrapper,
+    footer,
+    .how-section {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+
+    .theme-toggle {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 1px solid var(--border2);
+      background: transparent;
+      color: var(--text2);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .theme-toggle svg {
+      display: block;
+    }
+
+    .theme-toggle .icon-sun {
+      display: none;
+    }
+
+    :root[data-theme="dark"] .theme-toggle .icon-sun {
+      display: block;
+    }
+
+    :root[data-theme="dark"] .theme-toggle .icon-moon {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .theme-toggle .icon-sun {
+        display: block;
+      }
+
+      :root:not([data-theme="light"]) .theme-toggle .icon-moon {
+        display: none;
       }
     }
   </style>
 </head>
+
 <body>
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <a href="#" aria-label="Inicio" style="
+                        background-color: #f1f5f9;
+                        padding: 3px;
+                        border-radius: 6px;
+                    ">
+          <img src="assets/stackLab.png" alt="StackLab" width="279" height="154" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#trabajos">Proyectos</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+      </ul>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema claro/oscuro">
+          <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+          </svg>
+          <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+        </button>
+        <a href="https://wa.me/595987449587?text=Hola%20estoy%20interesado%20en%20un%20desarrollo" target="_blank"
+          rel="noopener" class="nav-cta">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"
+            style="flex-shrink:0">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+          </svg>
+          Hablemos
+        </a>
+      </div>
+    </div>
+  </nav>
 
-<nav>
-  <div class="nav-logo">
-    <a href="#" aria-label="Inicio" style="background-color: #f1f5f9;padding: 3px;border-radius: 6px;">
-      <img src="assets/stackLab.png" alt="StackLab" width="279" height="154" />
-    </a>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#trabajos">Proyectos</a></li>
-    <li><a href="#proceso">Proceso</a></li>
-    <li><a href="#nosotros">Nosotros</a></li>
-  </ul>
-  <a href="#contacto" class="nav-cta">Hablemos</a>
-</nav>
-
-<section class="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-inner fade-up">
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-inner fade-up">
       <h1>
-      Construimos software<br />
-      <span class="accent-line">que funciona de verdad.</span><br />
-      <span class="dim-line">Rápido. Sin vueltas.</span>
-    </h1>
-    <p class="hero-sub">
-      Sitios web, apps móviles, sistemas a medida y chatbots — entregados en
-      tiempo récord para negocios que quieren crecer.
-    </p>
-    <div class="hero-actions">
-      <a href="#contacto" class="btn-primary">
-        Cotizar proyecto
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          aria-hidden="true"
-        >
-          <path d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      </a>
-      <a href="#servicios" class="btn-ghost">Ver servicios</a>
-    </div>
-    <div class="hero-stat-row">
-      <div class="hero-stat">
-        <div class="num">Proyectos</div>
-        <div class="label">que se adaptan a tu necesidad</div>
+        Construimos software<br />
+        <span class="accent-line">que funciona de verdad.</span><br />
+        <span class="dim-line">Rápido. Sin vueltas.</span>
+      </h1>
+      <p class="hero-sub">
+        Sitios web, apps móviles, sistemas a medida y chatbots —
+        entregados en tiempo récord para negocios en Paraguay que
+        quieren crecer.
+      </p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-primary">
+          Cotizar proyecto
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#servicios" class="btn-ghost">Ver servicios</a>
       </div>
-      <div class="hero-stat">
-        <div class="num">Directo</div>
-        <div class="label">sin intermediarios ni sorpresas</div>
+      <div class="hero-stat-row">
+        <div class="hero-stat">
+          <div class="num">Proyectos</div>
+          <div class="label">que se adaptan a tu necesidad</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">Directo</div>
+          <div class="label">sin intermediarios ni sorpresas</div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<div style="border-top: 1px solid var(--border)">
-  <section class="section" id="servicios">
-    <p class="section-label fade-up">Lo que hacemos</p>
-    <h2 class="section-title fade-up">
-      Servicios que se adaptan<br />a tu etapa de negocio.
-    </h2>
-    <p class="section-sub fade-up">
-      Desde una landing page hasta sistemas completos. Empezamos por donde
-      tengas más necesidad.
-    </p>
-    <div class="services-grid fade-up">
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="ti ti-browser" aria-hidden="true"></i>
+  <div style="border-top: 1px solid var(--border)">
+    <section class="section" id="servicios">
+      <p class="section-label fade-up">Lo que hacemos</p>
+      <h2 class="section-title fade-up">
+        Servicios que se adaptan<br />a tu etapa de negocio.
+      </h2>
+      <p class="section-sub fade-up">
+        Desde una landing page hasta sistemas completos. Empezamos
+        por donde tengas más necesidad.
+      </p>
+      <div class="services-grid fade-up">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ti ti-browser" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-name">Landing page</h3>
+          <div class="service-desc">
+            Una página que convierte visitas en clientes. Diseño
+            limpio, responsive y rápida de cargar.
+          </div>
         </div>
-        <div class="service-name">Landing page</div>
-        <div class="service-desc">
-          Una página que convierte visitas en clientes. Diseño limpio,
-          responsive y rápida de cargar.
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ti ti-building" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-name">Sitio corporativo</h3>
+          <div class="service-desc">
+            Presencia web completa con CMS, SEO y diseño
+            adaptado a tu marca.
+          </div>
         </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="ti ti-building" aria-hidden="true"></i>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ti ti-message-chatbot" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-name">Chatbot de soporte</h3>
+          <div class="service-desc">
+            Asistente inteligente para tu sitio que responde
+            preguntas y atiende clientes de forma automática.
+          </div>
         </div>
-        <div class="service-name">Sitio corporativo</div>
-        <div class="service-desc">
-          Presencia web completa con CMS, SEO y diseño adaptado a tu marca.
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="ti ti-message-chatbot" aria-hidden="true"></i>
-        </div>
-        <div class="service-name">Chatbot de soporte</div>
-        <div class="service-desc">
-          Asistente inteligente para tu sitio que responde preguntas y atiende
-          clientes de forma automática.
-        </div>
-      </div>
-      <!-- Habilitar cuando tengamos una mac xd -->
-      <!-- <div class="service-card">
+        <!-- Habilitar cuando tengamos una mac xd -->
+        <!-- <div class="service-card">
         <div class="service-icon">
           <i class="ti ti-device-mobile" aria-hidden="true"></i>
         </div>
-        <div class="service-name">App multiplataforma</div>
+        <h3 class="service-name">App multiplataforma</h3>
         <div class="service-desc">
           Aplicación móvil para iOS y Android desde un solo código. Lista para
           publicar en stores.
         </div>
       </div> -->
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="ti ti-layout-dashboard" aria-hidden="true"></i>
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ti ti-layout-dashboard" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-name">Panel de administración</h3>
+          <div class="service-desc">
+            Dashboard a medida con tablas, filtros, reportes y
+            permisos por rol.
+          </div>
         </div>
-        <div class="service-name">Panel de administración</div>
-        <div class="service-desc">
-          Dashboard a medida con tablas, filtros, reportes y permisos por rol.
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="ti ti-api" aria-hidden="true"></i>
+          </div>
+          <h3 class="service-name">API REST</h3>
+          <div class="service-desc">
+            Backend robusto con .NET o Spring Boot,
+            autenticación JWT y documentación Swagger.
+          </div>
         </div>
+        <div class="service-card" aria-hidden="true"></div>
       </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <i class="ti ti-api" aria-hidden="true"></i>
+    </section>
+  </div>
+
+  <section class="carousel-section" id="trabajos">
+    <div class="section-inner">
+      <p class="section-label fade-up">Lo que podemos construir</p>
+      <h2 class="section-title fade-up">
+        Desde una landing page hasta un sistema a medida.
+      </h2>
+      <div class="carousel fade-up">
+        <div class="carousel-track-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+              <img src="assets/saas1.jpg" alt="Plataforma SaaS a medida desarrollada por StackLab" width="1600"
+                height="802" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-4.webp" alt="Sitio web desarrollado por StackLab en Paraguay" width="1920"
+                height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-panel-3.webp" alt="Panel de administración a medida desarrollado por StackLab"
+                width="1920" height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-panel-1.webp" alt="Panel de administración a medida desarrollado por StackLab"
+                width="1920" height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-1.webp" alt="Sitio web desarrollado por StackLab en Paraguay" width="1920"
+                height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-2.webp" alt="Sitio web desarrollado por StackLab en Paraguay" width="1920"
+                height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-3.webp" alt="Sitio web desarrollado por StackLab en Paraguay" width="1920"
+                height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-5.webp" alt="Sitio web desarrollado por StackLab en Paraguay" width="1920"
+                height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-6.webp" alt="Sitio web desarrollado por StackLab en Paraguay" width="1920"
+                height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-7.webp" alt="Sitio web desarrollado por StackLab en Paraguay" width="1920"
+                height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-8.webp" alt="Sitio web desarrollado por StackLab en Paraguay" width="1920"
+                height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-panel-2.webp" alt="Panel de administración a medida desarrollado por StackLab"
+                width="1920" height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-panel-4.webp" alt="Panel de administración a medida desarrollado por StackLab"
+                width="1920" height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-panel-5.webp" alt="Panel de administración a medida desarrollado por StackLab"
+                width="1920" height="966" loading="lazy" />
+            </div>
+            <div class="carousel-slide">
+              <img src="assets/screenshot-panel-6.webp" alt="Panel de administración a medida desarrollado por StackLab"
+                width="1920" height="966" loading="lazy" />
+            </div>
+          </div>
         </div>
-        <div class="service-name">API REST</div>
-        <div class="service-desc">
-          Backend robusto con .NET o Spring Boot, autenticación JWT y
-          documentación Swagger.
-        </div>
+        <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
-      <div class="service-card" aria-hidden="true"></div>
     </div>
   </section>
-</div>
 
-<section class="carousel-section" id="trabajos">
-  <div class="section-inner">
-    <p class="section-label fade-up">Lo que podemos construir</p>
-    <h2 class="section-title fade-up">Desde una landing page hasta un sistema a medida — esto es solo una muestra de nuestras posibilidades.</h2>
-    <div class="carousel fade-up">
-      <div class="carousel-track-wrapper">
-        <div class="carousel-track" id="carouselTrack">
-          <div class="carousel-slide"><img src="assets/screenshot-4.webp" alt="Proyecto 4" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-panel-3.webp" alt="Proyecto 11" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-panel-1.webp" alt="Proyecto 9" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-1.webp" alt="Proyecto 1" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-2.webp" alt="Proyecto 2" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-3.webp" alt="Proyecto 3" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-5.webp" alt="Proyecto 5" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-6.webp" alt="Proyecto 6" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-7.webp" alt="Proyecto 7" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-8.webp" alt="Proyecto 8" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-panel-2.webp" alt="Proyecto 10" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-panel-4.webp" alt="Proyecto 12" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-panel-5.webp" alt="Proyecto 13" loading="lazy" /></div>
-          <div class="carousel-slide"><img src="assets/screenshot-panel-6.webp" alt="Proyecto 14" loading="lazy" /></div>
+  <section class="how-section" id="proceso">
+    <div class="how-inner">
+      <p class="section-label fade-up">Cómo trabajamos</p>
+      <h2 class="section-title fade-up">
+        Simple, directo, sin vueltas.
+      </h2>
+      <p class="section-sub fade-up">
+        Proceso claro desde el primer mensaje hasta la entrega
+        final.
+      </p>
+      <div class="steps">
+        <div class="step fade-up">
+          <div class="step-num">01</div>
+          <h3 class="step-name">Hablamos</h3>
+          <div class="step-desc">
+            Nos contás qué necesitás. Te entregamos una
+            propuesta clara y sin sorpresas.
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step-num">02</div>
+          <h3 class="step-name">Diseñamos</h3>
+          <div class="step-desc">
+            Definimos el alcance juntos. Sin sorpresas después.
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step-num">03</div>
+          <h3 class="step-name">Construimos</h3>
+          <div class="step-desc">
+            Desarrollo ágil con actualizaciones frecuentes para
+            que veas el avance en todo momento.
+          </div>
+        </div>
+        <div class="step fade-up">
+          <div class="step-num">04</div>
+          <h3 class="step-name">Entregamos</h3>
+          <div class="step-desc">
+            Deploy, pruebas y soporte post-entrega incluido. No
+            desaparecemos.
+          </div>
         </div>
       </div>
-      <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Anterior">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Siguiente">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-      <div class="carousel-dots" id="carouselDots"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="how-section" id="proceso">
-  <div class="how-inner">
-    <p class="section-label fade-up">Cómo trabajamos</p>
-    <h2 class="section-title fade-up">Simple, directo, sin vueltas.</h2>
+  <section class="section" id="nosotros">
+    <p class="section-label fade-up">Por qué StackLab</p>
+    <h2 class="section-title fade-up">No somos otra agencia.</h2>
     <p class="section-sub fade-up">
-      Proceso claro desde el primer mensaje hasta la entrega final.
+      Somos un equipo técnico pequeño y enfocado, especializado en
+      desarrollo de software en Paraguay — eso se nota en cada
+      entrega.
     </p>
-    <div class="steps">
-      <div class="step fade-up">
-        <div class="step-num">01</div>
-        <div class="step-name">Hablamos</div>
-        <div class="step-desc">
-          Nos contás qué necesitás. Te entregamos una propuesta clara y sin
-          sorpresas.
+    <div class="why-grid fade-up">
+      <div class="why-card">
+        <h3 class="why-title">Velocidad de entrega real</h3>
+        <div class="why-desc">
+          Nuestro proceso de trabajo está optimizado para entregar
+          rápido sin sacrificar calidad. Nos enfocamos en
+          resultados claros y avance constante.
         </div>
       </div>
-      <div class="step fade-up">
-        <div class="step-num">02</div>
-        <div class="step-name">Diseñamos</div>
-        <div class="step-desc">
-          Definimos el alcance juntos. Sin sorpresas después.
+      <div class="why-card">
+        <h3 class="why-title">Stack completo, un solo equipo</h3>
+        <!-- incluir Web, mobile, backend, chatbots. en el futuro -->
+        <div class="why-desc">
+          No tercerizamos nada ni tenés que coordinar varios
+          proveedores. Todo bajo un mismo techo.
         </div>
       </div>
-      <div class="step fade-up">
-        <div class="step-num">03</div>
-        <div class="step-name">Construimos</div>
-        <div class="step-desc">
-          Desarrollo ágil con actualizaciones frecuentes para que veas el avance
-          en todo momento.
+      <div class="why-card">
+        <h3 class="why-title">Presupuestos claros</h3>
+        <div class="why-desc">
+          Conocemos el mercado local. Ofrecemos presupuestos
+          justos y transparentes desde el primer contacto, sin
+          letra chica ni costos ocultos.
         </div>
       </div>
-      <div class="step fade-up">
-        <div class="step-num">04</div>
-        <div class="step-name">Entregamos</div>
-        <div class="step-desc">
-          Deploy, pruebas y soporte post-entrega incluido. No desaparecemos.
+      <div class="why-card">
+        <h3 class="why-title">Soporte después de la entrega</h3>
+        <div class="why-desc">
+          Ofrecemos mantenimiento mensual para que tu producto
+          siga funcionando.
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="nosotros">
-  <p class="section-label fade-up">Por qué StackLab</p>
-  <h2 class="section-title fade-up">No somos otra agencia.</h2>
-  <p class="section-sub fade-up">
-    Somos un equipo técnico pequeño y enfocado — eso se nota en cada entrega.
-  </p>
-  <div class="why-grid fade-up">
-    <div class="why-card featured">
-      <div class="why-title">Velocidad de entrega real</div>
-      <div class="why-desc">
-        Nuestro proceso de trabajo está optimizado para entregar rápido sin
-        sacrificar calidad. Nos enfocamos en resultados claros y avance constante.
-      </div>
+  <section class="cta-section" id="contacto" style="border-top: 1px solid var(--border)">
+    <div class="cta-glow"></div>
+    <div class="fade-up">
+      <h2>¿Tenés un proyecto en mente?</h2>
+      <p>
+        Contanos qué necesitás y te respondemos con una propuesta
+        clara.
+      </p>
+      <form class="contact-form" id="contact-form">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Tu nombre" required />
+          <input type="email" name="email" placeholder="Tu email" required />
+        </div>
+        <textarea name="message" placeholder="Contanos sobre tu proyecto..." required></textarea>
+        <div class="form-status" id="form-status"></div>
+        <button type="submit" class="btn-primary" id="form-btn" style="align-self: flex-start">
+          Enviar mensaje
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </form>
     </div>
-    <div class="why-card">
-      <div class="why-title">Stack completo, un solo equipo</div>
-      <!-- incluir Web, mobile, backend, chatbots. en el futuro -->
-      <div class="why-desc">
-        No tercerizamos nada ni tenés que
-        coordinar varios proveedores. Todo bajo un mismo techo.
-      </div>
-    </div>
-    <div class="why-card">
-      <div class="why-title">Presupuestos claros</div>
-      <div class="why-desc">
-        Conocemos el mercado local. Ofrecemos presupuestos justos y transparentes
-        desde el primer contacto, sin letra chica ni costos ocultos.
-      </div>
-    </div>
-    <div class="why-card">
-      <div class="why-title">Soporte después de la entrega</div>
-      <div class="why-desc">
-        Ofrecemos mantenimiento mensual para que tu producto siga funcionando.
-        No desaparecemos cuando cobran.
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section
-  class="cta-section"
-  id="contacto"
-  style="border-top: 1px solid var(--border)"
->
-  <div class="cta-glow"></div>
-  <div class="fade-up">
-    <h2>¿Tenés un proyecto en mente?</h2>
-    <p>Contanos qué necesitás y te respondemos con una propuesta clara.</p>
-    <a
-      href="mailto:consultadesarrolloweb@gmail.com"
-      class="btn-primary"
-      style="display: inline-flex"
-    >
-      Contactanos ahora
-      <svg
-        width="14"
-        height="14"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M5 12h14M12 5l7 7-7 7" />
-      </svg>
-    </a>
-  </div>
-</section>
+  <footer>
+    <p>© 2026 StackLab · Paraguay</p>
+  </footer>
 
-<footer>
-  <div class="footer-logo">
-    <img src="assets/stackLab.png" alt="StackLab" width="279" height="154" />
-  </div>
-  <p>© 2026 StackLab · Paraguay</p>
-</footer>
+  <script>
+    // Carousel
+    (function () {
+      const track = document.getElementById("carouselTrack");
+      const dotsContainer = document.getElementById("carouselDots");
+      const slides = track.querySelectorAll(".carousel-slide");
+      const total = slides.length;
+      let current = 0;
+      let timer;
 
-<script>
-  // Carousel
-  (function () {
-    const track = document.getElementById('carouselTrack');
-    const dotsContainer = document.getElementById('carouselDots');
-    const slides = track.querySelectorAll('.carousel-slide');
-    const total = slides.length;
-    let current = 0;
-    let timer;
+      slides.forEach((_, i) => {
+        const dot = document.createElement("button");
+        dot.className = "carousel-dot" + (i === 0 ? " active" : "");
+        dot.setAttribute("aria-label", "Ir a imagen " + (i + 1));
+        dot.addEventListener("click", () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
 
-    slides.forEach((_, i) => {
-      const dot = document.createElement('button');
-      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Ir a imagen ' + (i + 1));
-      dot.addEventListener('click', () => goTo(i));
-      dotsContainer.appendChild(dot);
+      function goTo(index) {
+        slides[current] && null;
+        current = (index + total) % total;
+        track.style.transform =
+          "translateX(-" + current * 100 + "%)";
+        dotsContainer
+          .querySelectorAll(".carousel-dot")
+          .forEach((d, i) => {
+            d.classList.toggle("active", i === current);
+          });
+      }
+
+      function startTimer() {
+        timer = setInterval(() => goTo(current + 1), 5000);
+      }
+
+      document
+        .getElementById("carouselPrev")
+        .addEventListener("click", () => {
+          clearInterval(timer);
+          goTo(current - 1);
+          startTimer();
+        });
+      document
+        .getElementById("carouselNext")
+        .addEventListener("click", () => {
+          clearInterval(timer);
+          goTo(current + 1);
+          startTimer();
+        });
+      track
+        .closest(".carousel")
+        .addEventListener("mouseenter", () => clearInterval(timer));
+      track
+        .closest(".carousel")
+        .addEventListener("mouseleave", startTimer);
+
+      startTimer();
+    })();
+
+    // Theme toggle
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.getElementById("themeToggle");
+
+      toggle.addEventListener("click", function () {
+        const systemDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const current =
+          root.getAttribute("data-theme") ||
+          (systemDark ? "dark" : "light");
+        const next = current === "dark" ? "light" : "dark";
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+      });
+    })();
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add("visible");
+        });
+      },
+      { threshold: 0.1 },
+    );
+    document
+      .querySelectorAll(".fade-up")
+      .forEach((el) => obs.observe(el));
+  </script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    (function () {
+      emailjs.init({ publicKey: "0jh5VJdoXBopdkdvs" });
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const btn = document.getElementById("form-btn");
+      const status = document.getElementById("form-status");
+
+      btn.disabled = true;
+      btn.textContent = "Enviando...";
+      status.className = "form-status";
+
+      emailjs
+        .sendForm("service_yfrc6xj", "template_hc67qzn", this)
+        .then(function () {
+          status.className = "form-status success";
+          status.textContent = "¡Mensaje enviado! Te respondemos pronto.";
+          document.getElementById("contact-form").reset();
+          btn.disabled = false;
+          btn.innerHTML = 'Enviar mensaje <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        })
+        .catch(function () {
+          status.className = "form-status error";
+          status.textContent = "Hubo un error al enviar. Intentá de nuevo.";
+          btn.disabled = false;
+          btn.innerHTML = 'Enviar mensaje <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+        });
     });
-
-    function goTo(index) {
-      slides[current] && null;
-      current = (index + total) % total;
-      track.style.transform = 'translateX(-' + current * 100 + '%)';
-      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => {
-        d.classList.toggle('active', i === current);
-      });
-    }
-
-    function startTimer() {
-      timer = setInterval(() => goTo(current + 1), 5000);
-    }
-
-    document.getElementById('carouselPrev').addEventListener('click', () => { clearInterval(timer); goTo(current - 1); startTimer(); });
-    document.getElementById('carouselNext').addEventListener('click', () => { clearInterval(timer); goTo(current + 1); startTimer(); });
-    track.closest('.carousel').addEventListener('mouseenter', () => clearInterval(timer));
-    track.closest('.carousel').addEventListener('mouseleave', startTimer);
-
-    startTimer();
-  })();
-
-  const obs = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) e.target.classList.add("visible");
-      });
-    },
-    { threshold: 0.1 },
-  );
-  document.querySelectorAll(".fade-up").forEach((el) => obs.observe(el));
-</script>
-
+  </script>
 </body>
+
 </html>

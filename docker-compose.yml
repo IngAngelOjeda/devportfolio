@@ -1,0 +1,8 @@
+services:
+  stacklab-frontend:
+    build: .
+    image: registry.digitalocean.com/stacklabregistry/stacklab-frontend:v1
+    container_name: stacklab-frontend
+    ports:
+      - "8095:80"
+    restart: unless-stopped
